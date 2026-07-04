@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review — сцены лагеря</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Manrope:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap&subset=cyrillic,cyrillic-ext,latin" rel="stylesheet">
+<style>
+  :root{--paper:#EDE6D8;--terracotta:#B5562E;--charcoal:#2B2622;--coffee:#5C4F42;
+    --display:"Playfair Display",serif;--body:"Manrope",sans-serif;--mono:"IBM Plex Mono",monospace}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--body);color:var(--charcoal)}
+  .hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:center;background-size:cover;background-position:center;overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(20,16,14,.46) 0%,rgba(20,16,14,.12) 46%,transparent 70%)}
+  .wrap{position:relative;z-index:2;padding:0 clamp(28px,6vw,90px);max-width:1300px;margin:0 auto;width:100%}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#fff;opacity:.92}
+  .glass{margin-top:18px;display:inline-block;max-width:640px;padding:30px 36px;border-radius:14px;
+    background:rgba(255,250,242,.16);border:1px solid rgba(255,255,255,.28);
+    -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);box-shadow:0 30px 70px -30px rgba(0,0,0,.5)}
+  h1{font-family:var(--display);font-weight:600;font-size:clamp(40px,5.6vw,76px);line-height:1.03;color:#fff;letter-spacing:-.01em;text-shadow:0 2px 24px rgba(0,0,0,.35)}
+  h1 em{font-style:italic;color:#ffd9a0}
+  .sub{margin-top:14px;max-width:520px;font-size:17px;color:#fff;opacity:.95}
+  .cta{display:flex;gap:13px;margin-top:24px;flex-wrap:wrap}
+  .btn{font-weight:700;font-size:15px;padding:14px 26px;border-radius:4px;text-decoration:none}
+  .btn--p{background:var(--terracotta);color:#fff}
+  .btn--g{background:rgba(255,255,255,.16);color:#fff;border:1.5px solid rgba(255,255,255,.6)}
+  .tag{position:absolute;top:22px;left:24px;z-index:3;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    background:rgba(20,16,14,.6);color:#fff;padding:8px 14px;border-radius:4px}
+</style>
+</head>
+<body>
+  <section class="hero" style="background-image:url('assets/generated/camp-morning.png')">
+    <span class="tag">Вариант A · Утро · бирюза + терракот</span>
+    <div class="wrap">
+      <span class="kicker">Клуб путешествий · агрегатор личных брендов инструкторов</span>
+      <div class="glass">
+        <h1>Перед исполнением&nbsp;— <em>прочесть.</em></h1>
+        <p class="sub">Не&nbsp;к&nbsp;горе. К&nbsp;проводнику, который этот путь уже прошёл.</p>
+        <div class="cta"><a class="btn btn--p" href="#">Пойдём со мной</a><a class="btn btn--g" href="#">Выбрать инструкцию</a></div>
+      </div>
+    </div>
+  </section>
+  <section class="hero" style="background-image:url('assets/generated/camp-sunset.png')">
+    <span class="tag">Вариант B · Закат · костёр + насыщенное небо</span>
+    <div class="wrap">
+      <span class="kicker">Клуб путешествий · агрегатор личных брендов инструкторов</span>
+      <div class="glass">
+        <h1>Перед исполнением&nbsp;— <em>прочесть.</em></h1>
+        <p class="sub">Не&nbsp;к&nbsp;горе. К&nbsp;проводнику, который этот путь уже прошёл.</p>
+        <div class="cta"><a class="btn btn--p" href="#">Пойдём со мной</a><a class="btn btn--g" href="#">Выбрать инструкцию</a></div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

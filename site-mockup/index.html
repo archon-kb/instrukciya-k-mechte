@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Инструкция к мечте — клуб путешествий</title>
+<meta name="description" content="Не туры — проводники. Клуб личных брендов инструкторов: каждая мечта складывается в пошаговую инструкцию, а рядом всегда человек, который этот маршрут уже прошёл.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap&subset=cyrillic,cyrillic-ext,latin" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="slides">
+
+<!-- ============================================================ SVG БИБЛИОТЕКА -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- контурный паттерн (изолинии) -->
+    <symbol id="contour" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice">
+      <g fill="none" stroke="currentColor" stroke-width="1.4">
+        <path d="M-50,40 C220,8 420,80 700,46 C960,16 1080,86 1300,40"/>
+        <path d="M-50,92 C220,60 420,132 700,98 C960,68 1080,138 1300,92"/>
+        <path d="M-50,144 C220,112 420,184 700,150 C960,120 1080,190 1300,144"/>
+        <path d="M-50,196 C220,164 420,236 700,202 C960,172 1080,242 1300,196"/>
+        <path d="M-50,248 C220,216 420,288 700,254 C960,224 1080,294 1300,248"/>
+        <path d="M-50,300 C220,268 420,340 700,306 C960,276 1080,346 1300,300"/>
+        <path d="M-50,352 C220,320 420,392 700,358 C960,328 1080,398 1300,352"/>
+        <path d="M-50,404 C220,372 420,444 700,410 C960,380 1080,450 1300,404"/>
+        <path d="M-50,456 C220,424 420,496 700,462 C960,432 1080,502 1300,456"/>
+      </g>
+    </symbol>
+    <!-- плёночное зерно и мягкое свечение для атмосферных сцен -->
+    <filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="saturate" values="0"/></filter>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="44"/></filter>
+
+    <!-- хребет: острые пики -->
+    <symbol id="ridge-peaks" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <rect style="fill:var(--sky1)" x="0" y="0" width="1200" height="800"/>
+      <rect style="fill:var(--sky2)" x="0" y="300" width="1200" height="200"/>
+      <circle style="fill:var(--sun)" cx="880" cy="316" r="58"/>
+      <circle style="fill:var(--sun)" cx="880" cy="316" r="104" opacity=".3"/>
+      <path style="fill:var(--l1)" d="M0,420 L120,356 200,402 320,296 430,378 560,318 700,392 820,330 960,402 1080,338 1200,400 L1200,800 L0,800 Z"/>
+      <path style="fill:var(--l2)" d="M0,524 L90,470 180,512 280,438 380,512 480,458 600,522 720,468 840,520 960,470 1080,520 1200,480 L1200,800 L0,800 Z"/>
+      <path style="fill:var(--l3)" d="M0,642 L140,600 260,652 380,600 520,662 660,610 800,662 940,610 1080,660 1200,620 L1200,800 L0,800 Z"/>
+      <g style="fill:none;stroke:var(--cl);opacity:.14" stroke-width="1.3">
+        <path d="M0,690 C260,672 520,700 800,684 C1000,672 1100,694 1200,684"/>
+        <path d="M0,724 C260,708 520,734 800,720 C1000,710 1100,730 1200,720"/>
+      </g>
+    </symbol>
+
+    <!-- хребет: округлые холмы / вода -->
+    <symbol id="ridge-hills" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <rect style="fill:var(--sky1)" x="0" y="0" width="1200" height="800"/>
+      <rect style="fill:var(--sky2)" x="0" y="320" width="1200" height="190"/>
+      <circle style="fill:var(--sun)" cx="320" cy="332" r="54"/>
+      <circle style="fill:var(--sun)" cx="320" cy="332" r="98" opacity=".3"/>
+      <path style="fill:var(--l1)" d="M0,470 C200,408 400,452 600,420 C800,388 1000,452 1200,420 L1200,800 L0,800 Z"/>
+      <path style="fill:var(--l2)" d="M0,566 C220,514 420,566 640,526 C860,490 1040,552 1200,520 L1200,800 L0,800 Z"/>
+      <path style="fill:var(--l3)" d="M0,654 C300,632 520,668 820,648 C1010,635 1110,662 1200,650 L1200,800 L0,800 Z"/>
+      <g style="fill:none;stroke:var(--cl);opacity:.14" stroke-width="1.3">
+        <path d="M0,700 C300,686 600,712 900,698 C1050,690 1130,706 1200,698"/>
+        <path d="M0,734 C300,722 600,746 900,734 C1050,727 1130,742 1200,734"/>
+      </g>
+    </symbol>
+
+    <!-- дюны + море -->
+    <symbol id="ridge-dunes" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <rect style="fill:var(--sky1)" x="0" y="0" width="1200" height="800"/>
+      <rect style="fill:var(--sky2)" x="0" y="330" width="1200" height="200"/>
+      <circle style="fill:var(--sun)" cx="760" cy="346" r="56"/>
+      <circle style="fill:var(--sun)" cx="760" cy="346" r="100" opacity=".3"/>
+      <path style="fill:var(--l1)" d="M0,506 C200,464 380,524 560,484 C760,438 980,524 1200,478 L1200,800 L0,800 Z"/>
+      <path style="fill:var(--l2)" d="M0,602 C260,560 460,612 700,576 C920,544 1080,600 1200,580 L1200,800 L0,800 Z"/>
+      <path style="fill:var(--l3)" d="M0,690 C300,678 600,702 900,688 C1050,680 1150,696 1200,690 L1200,800 L0,800 Z"/>
+      <g style="fill:none;stroke:var(--cl);opacity:.14" stroke-width="1.3">
+        <path d="M0,726 C300,716 600,738 900,728 C1050,722 1130,734 1200,728"/>
+        <path d="M0,758 C300,750 600,768 900,760 C1050,755 1130,766 1200,760"/>
+      </g>
+    </symbol>
+
+    <!-- портрет инструктора: фигура в пейзаже -->
+    <symbol id="portrait" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice">
+      <rect style="fill:var(--sky1)" x="0" y="0" width="600" height="800"/>
+      <rect style="fill:var(--sky2)" x="0" y="250" width="600" height="170"/>
+      <circle style="fill:var(--sun)" cx="438" cy="262" r="46"/>
+      <circle style="fill:var(--sun)" cx="438" cy="262" r="84" opacity=".3"/>
+      <path style="fill:var(--l1)" d="M0,400 L120,348 230,402 350,322 470,400 560,352 600,388 L600,800 L0,800 Z"/>
+      <path style="fill:var(--l2)" d="M0,520 L150,468 300,520 450,470 600,512 L600,800 L0,800 Z"/>
+      <!-- фигура: рюкзак + тело + голова + ноги -->
+      <g style="fill:var(--l3)">
+        <rect x="251" y="446" width="42" height="86" rx="14"/>
+        <circle cx="300" cy="410" r="31"/>
+        <path d="M274,448 h52 a19,19 0 0 1 19,19 l7,86 a12,12 0 0 1 -12,13 h-80 a12,12 0 0 1 -12,-13 l7,-86 a19,19 0 0 1 19,-19 z"/>
+        <path d="M285,556 l-7,92 a11,11 0 0 0 22,0 l4,-74 4,74 a11,11 0 0 0 22,0 l-7,-92 z"/>
+        <rect x="349" y="470" width="5" height="188" rx="2.5" transform="rotate(5 351 564)"/>
+      </g>
+      <g style="fill:none;stroke:var(--cl);opacity:.14" stroke-width="1.3">
+        <path d="M0,690 C150,676 320,702 460,688 C540,680 580,696 600,688"/>
+        <path d="M0,724 C150,712 320,736 460,724 C540,717 580,730 600,724"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============================================================ ХЕДЕР -->
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brandmark" href="index.html" aria-label="Инструкция к мечте — на главную">
+      <span class="brandmark__mark">
+        <svg viewBox="0 0 38 38" fill="none" aria-hidden="true">
+          <circle cx="19" cy="19" r="17.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M11 17 L19 9 L27 17" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/>
+          <path d="M5.5 22.5 C10 20.5, 14 23.5, 19 21 C24 18.5, 28 21.5, 32.5 19.5" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M6.5 27 C11 25, 15 28, 19 25.8 C24 23.2, 28 26, 31.5 24.2" stroke="currentColor" stroke-width="1.4" opacity=".55"/>
+        </svg>
+      </span>
+      <span class="brandmark__txt">
+        <span class="brandmark__name">Инструкция&nbsp;к&nbsp;мечте</span>
+        <span class="brandmark__sub">Dream Instruction</span>
+      </span>
+    </a>
+    <nav class="nav__links">
+      <a href="instruktory.html">Проводники</a>
+      <a href="instrukcii.html">Инструкции</a>
+      <a href="shkola.html">Школа</a>
+      <a href="formaty.html">Форматы</a>
+      <a href="zhurnal.html">Журнал</a>
+      <a href="pasport.html">Паспорт</a>
+    </nav>
+    <div class="nav__cta">
+      <a class="btn btn--ghost" href="#instructions">Выбрать инструкцию</a>
+      <a class="btn btn--primary" href="#instructors">Пойдём со&nbsp;мной</a>
+      <button class="btn btn--ghost nav__burger" id="burger" aria-label="Меню">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================ HERO -->
+<section class="hero">
+  <div class="hero__art" style="background-image:url('assets/generated/camp-morning.png')"></div>
+  <div class="hero__scrim"></div>
+  <div class="wrap hero__inner">
+    <div class="hero__glass">
+      <span class="hero__kicker">Клуб путешествий · агрегатор личных брендов инструкторов</span>
+      <h1 class="hero__title">Перед исполнением&nbsp;— <em>прочесть.</em></h1>
+      <p class="hero__sub">Рядом&nbsp;— свой человек, который прошёл эту тропу до тебя и поведёт тебя по ней, как друга.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary btn--arrow" href="#instructors">Пойдём со мной</a>
+        <a class="btn btn--ghost" href="#instructions">Выбрать инструкцию</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ СЛАЙД 2 — МАНИФЕСТ + КОМУ ЭТО -->
+<section class="section snap-slide" id="segments">
+  <div class="wrap slide2">
+    <div class="slide2-head reveal">
+      <span class="kicker">01 · Манифест клуба</span>
+      <blockquote class="manifest-quote">Доступное приключение —<br><em>через людей</em>, а&nbsp;не&nbsp;через корпорации.</blockquote>
+      <div class="manifest-chips">
+        <span>В поход можно всем</span>
+        <span>Деньги — проводнику</span>
+        <span>Забота — на клубе</span>
+      </div>
+    </div>
+
+    <div class="segments-label reveal d1">
+      <span class="kicker">Кому это · выбери, кто ты сегодня — покажем твою инструкцию</span>
+    </div>
+
+    <div class="segments">
+      <a class="segment reveal" href="#instructions">
+        <span class="segment__ghost">01</span>
+        <span class="segment__icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5 13 13l-4.5 2.5L11 11z"/></svg></span>
+        <span class="segment__title">Мечтателям</span>
+        <span class="segment__desc">Хочешь в поход, но не знаешь, с чего начать.</span>
+        <span class="segment__go">выбрать <i>→</i></span>
+      </a>
+      <a class="segment reveal d1" href="#formats">
+        <span class="segment__ghost">02</span>
+        <span class="segment__icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 20 12 5l9 15z"/><path d="M8 20 12 13l4 7"/></svg></span>
+        <span class="segment__title">Семьям и детям</span>
+        <span class="segment__desc">Включая особенных. Честный паспорт доступности.</span>
+        <span class="segment__go">выбрать <i>→</i></span>
+      </a>
+      <a class="segment reveal d2" href="#formats">
+        <span class="segment__ghost">03</span>
+        <span class="segment__icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></svg></span>
+        <span class="segment__title">Мамам</span>
+        <span class="segment__desc">Лагерь в Чиралах, мамская Ладога — в своём темпе.</span>
+        <span class="segment__go">выбрать <i>→</i></span>
+      </a>
+      <a class="segment reveal d3" href="#formats">
+        <span class="segment__ghost">04</span>
+        <span class="segment__icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="9" r="2.5"/><circle cx="17" cy="9" r="2.5"/><path d="M2 19c0-3 2-5 5-5s5 2 5 5M12 19c0-3 2-5 5-5s5 2 5 5"/></svg></span>
+        <span class="segment__title">Командам</span>
+        <span class="segment__desc">Беговым, волейбольным, творческим. Событие под ключ.</span>
+        <span class="segment__go">выбрать <i>→</i></span>
+      </a>
+      <a class="segment reveal d4" href="#instructions">
+        <span class="segment__ghost">05</span>
+        <span class="segment__icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg></span>
+        <span class="segment__title">Новичкам ↔ опытным</span>
+        <span class="segment__desc">От первого рюкзака до своего перевала.</span>
+        <span class="segment__go">выбрать <i>→</i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ КАК ЭТО РАБОТАЕТ -->
+<section class="section section--sand" id="how">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-head__text">
+        <span class="kicker">02 · Как это работает</span>
+        <h2 class="h-2">Ты выбираешь не тур — ты выбираешь проводника</h2>
+        <p class="lede" style="margin-top:16px">Инструктор — автор маршрута и твой человек на тропе. Деньги идут напрямую ему: он ведёт — он и зарабатывает. А клуб берёт на себя всё, что мешает выйти в путь. Твоё дело — собрать рюкзак. Остальное уже прописано в инструкции.</p>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <span class="step__no">ШАГ 1</span>
+        <h3 class="step__title">Выбери проводника</h3>
+        <p class="step__desc">У каждого — свой край, свой ритуал и свои инструкции. Иди к человеку, чья тропа отзывается.</p>
+      </div>
+      <div class="step reveal d1">
+        <span class="step__no">ШАГ 2</span>
+        <h3 class="step__title">Напиши ему</h3>
+        <p class="step__desc">Предпоходный созвон, разбор снаряжения, ответы на «а потяну ли я». По-человечески, до оплаты.</p>
+      </div>
+      <div class="step reveal d2">
+        <span class="step__no">ШАГ 3</span>
+        <h3 class="step__title">Собери рюкзак</h3>
+        <p class="step__desc">Билеты, логистика, страховка и снаряжение — уже наша забота. Тебе — встать на тропу.</p>
+      </div>
+    </div>
+
+    <p class="covers-note reveal" style="text-align:left;margin-top:48px;margin-bottom:0">Что берёт на себя клуб — те самые 30% доли, превращённые в названный продукт:</p>
+    <div class="covers reveal d1">
+      <div class="cover"><svg class="cover__icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span class="cover__txt">Страховка<br>с репатриацией</span></div>
+      <div class="cover"><svg class="cover__icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h9l3 3v15H6z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg><span class="cover__txt">Юристы<br>и договор</span></div>
+      <div class="cover"><svg class="cover__icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 10h18M3 10l2-5h14l2 5M5 10v9h14v-9M9 14h6"/></svg><span class="cover__txt">Билеты<br>и трансферы</span></div>
+      <div class="cover"><svg class="cover__icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4h6l1 4H8zM8 8h8l2 12H6z"/><path d="M12 8v12"/></svg><span class="cover__txt">Снаряжение<br>клуба</span></div>
+      <div class="cover"><svg class="cover__icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="10" r="3"/><path d="M12 21c-5-5-7-8-7-11a7 7 0 0 1 14 0c0 3-2 6-7 11z"/></svg><span class="cover__txt">Логистика<br>маршрута</span></div>
+      <div class="cover"><svg class="cover__icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v6M12 9l-7 11h14z"/><circle cx="12" cy="14" r="1"/></svg><span class="cover__txt">Сводка<br>в МЧС</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ ИНСТРУКТОРЫ -->
+<section class="section" id="instructors">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-head__text">
+        <span class="kicker">03 · Сердце клуба</span>
+        <h2 class="h-2">Наши проводники</h2>
+        <p class="lede" style="margin-top:14px">У каждого — своя тропа, свой ритуал и свои инструкции. Спасатели и учителя, фотографы и повара — каждый влюблён в свой край и зовёт тебя туда.</p>
+      </div>
+      <a class="link-arrow" href="instruktory.html">Все проводники →</a>
+    </div>
+
+    <div class="instructors">
+      <a class="icard reveal" href="instruktor.html">
+        <span class="icard__photo"><svg class="scene scene--hibiny"><use href="#portrait"/></svg><span class="icard__count">47 инструкций</span></span>
+        <span class="icard__body">
+          <span class="icard__name">Андрей <span class="icard__alias">«Дед»</span></span>
+          <span class="icard__spec">Детские походы · Хибины · Карелия</span>
+          <span class="icard__reg">Спасатель, 12 лет на тропе</span>
+          <span class="icard__quote">«Заварю капучино на рассвете и покажу, где Хибины показывают характер.»</span>
+          <span class="icard__cta"><span class="link-arrow">Пойдём со мной →</span></span>
+        </span>
+      </a>
+
+      <a class="icard reveal d1" href="instruktor.html">
+        <span class="icard__photo"><svg class="scene scene--ladoga"><use href="#portrait"/></svg><span class="icard__count">38 инструкций</span></span>
+        <span class="icard__body">
+          <span class="icard__name">Дарья <span class="icard__alias">«Гид-проводник»</span></span>
+          <span class="icard__spec">Семейный · мамский · Ладога · Чиралы</span>
+          <span class="icard__reg">Гид-проводник, инструктор детского туризма</span>
+          <span class="icard__quote">«Возьму с собой и тебя, и твою маму — в своём темпе, без надрыва.»</span>
+          <span class="icard__cta"><span class="link-arrow">Пойдём со мной →</span></span>
+        </span>
+      </a>
+
+      <a class="icard reveal d2" href="instruktor.html">
+        <span class="icard__photo"><svg class="scene scene--dahab"><use href="#portrait"/></svg><span class="icard__count">29 инструкций</span></span>
+        <span class="icard__body">
+          <span class="icard__name">Ольга <span class="icard__alias">«В мир»</span></span>
+          <span class="icard__spec">English Camp · Дахаб · яхтинг</span>
+          <span class="icard__reg">Инструктор, преподаватель английского</span>
+          <span class="icard__quote">«За один поход ты заговоришь по-английски — потому что иначе не закажешь кофе.»</span>
+          <span class="icard__cta"><span class="link-arrow">Пойдём со мной →</span></span>
+        </span>
+      </a>
+
+      <a class="icard reveal d3" href="instruktor.html">
+        <span class="icard__photo"><svg class="scene scene--nepal"><use href="#portrait"/></svg><span class="icard__count">24 инструкции</span></span>
+        <span class="icard__body">
+          <span class="icard__name">Евгений <span class="icard__alias">«Анорак»</span></span>
+          <span class="icard__spec">Непал · Алтай · Босния</span>
+          <span class="icard__reg">Горный инструктор, зав. снаряжением клуба</span>
+          <span class="icard__quote">«Дам тебе правильный рюкзак и покажу, где тропа уходит к перевалу.»</span>
+          <span class="icard__cta"><span class="link-arrow">Пойдём со мной →</span></span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ ИНСТРУКЦИИ / ТУРЫ -->
+<section class="section section--sand" id="instructions">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-head__text">
+        <span class="kicker">04 · Ближайшие маршруты</span>
+        <h2 class="h-2">Ближайшие инструкции</h2>
+        <p class="lede" style="margin-top:14px">Байкал, Хибины, Непал, Дахаб, Алтай, яхтинг — выбери по региону, по сложности или по своему проводнику. У каждой даты — свой инструктор.</p>
+      </div>
+    </div>
+
+    <div class="sortbar reveal" style="margin-bottom:28px">
+      <span>Сортировка:</span>
+      <button class="is-active" data-sort>Дешевле → дороже</button>
+      <button data-sort>Дороже → дешевле</button>
+      <button data-sort>Легче → сложнее</button>
+      <button data-sort>Ближайшие даты</button>
+    </div>
+
+    <div class="tours">
+      <!-- Хибины -->
+      <a class="tcard reveal" href="instrukciya.html">
+        <span class="tcard__top">
+          <svg class="scene scene--hibiny"><use href="#ridge-peaks"/></svg>
+          <span class="tcard__no">Инструкция №07</span>
+          <span class="tcard__badges"><span class="badge-novice">Читать новичкам</span></span>
+          <span class="tcard__instructor"><span class="tcard__avatar"><svg class="scene scene--hibiny"><use href="#portrait"/></svg></span><span><b>Андрей «Дед»</b><small>ведёт инструктор</small></span></span>
+        </span>
+        <span class="tcard__body">
+          <span class="tcard__kicker">Россия · Хибины</span>
+          <span class="tcard__title">Дед Хибины и кофе на рассвете</span>
+          <span class="tcard__hook">Тундра, перевалы и капучинатор в рюкзаке.</span>
+          <span class="tcard__route"><span class="dot"></span>Апатиты<span class="seg"></span>Кировск<span class="seg"></span><span class="dot"></span>оз. Малый Вудъявр</span>
+          <span class="tcard__meta">
+            <span class="difficulty"><span class="difficulty__notches"><i class="difficulty__notch is-on"></i><i class="difficulty__notch is-on"></i><i class="difficulty__notch"></i><i class="difficulty__notch"></i><i class="difficulty__notch"></i></span><span class="difficulty__label">2/5</span></span>
+            <span class="tcard__kicker">8 дней · 64 км · ↑1200 м · от 7 лет</span>
+          </span>
+          <span class="tcard__foot">
+            <span class="tcard__price"><b>от 38 400 ₽</b><small>детский от 32 000 · 1–8 авг · +2 срока</small></span>
+            <span class="link-arrow">Открыть →</span>
+          </span>
+          <span class="tcard__discounts"><span class="badge-discount">−500 своё снаряжение</span><span class="badge-discount">−1000 предоплата</span></span>
+        </span>
+      </a>
+
+      <!-- Байкал / Шумак -->
+      <a class="tcard reveal d1" href="instrukciya.html">
+        <span class="tcard__top">
+          <svg class="scene scene--baikal"><use href="#ridge-hills"/></svg>
+          <span class="tcard__no">Инструкция №12</span>
+          <span class="tcard__instructor"><span class="tcard__avatar"><svg class="scene scene--baikal"><use href="#portrait"/></svg></span><span><b>Андрей «Дед»</b><small>ведёт инструктор</small></span></span>
+        </span>
+        <span class="tcard__body">
+          <span class="tcard__kicker">Россия · Бурятия · Байкал</span>
+          <span class="tcard__title">Шумак, шамбала и дедушка Байкал</span>
+          <span class="tcard__hook">Сто целебных источников и КБЖД вдоль священного озера.</span>
+          <span class="tcard__route"><span class="dot"></span>Аршан<span class="seg"></span>Шумак<span class="seg"></span><span class="dot"></span>КБЖД · Листвянка</span>
+          <span class="tcard__meta">
+            <span class="difficulty"><span class="difficulty__notches"><i class="difficulty__notch is-on"></i><i class="difficulty__notch is-on"></i><i class="difficulty__notch is-on"></i><i class="difficulty__notch"></i><i class="difficulty__notch"></i></span><span class="difficulty__label">3/5</span></span>
+            <span class="tcard__kicker">15 дней · 120 км · ↑1400 м · от 15 лет</span>
+          </span>
+          <span class="tcard__foot">
+            <span class="tcard__price"><b>от 43 000 ₽</b><small>детский от 41 000 · 1–15 авг</small></span>
+            <span class="link-arrow">Открыть →</span>
+          </span>
+          <span class="tcard__discounts"><span class="badge-discount">−500 своя палатка</span><span class="badge-discount">−1000 предоплата</span></span>
+        </span>
+      </a>
+
+      <!-- Непал -->
+      <a class="tcard reveal d2" href="instrukciya.html">
+        <span class="tcard__top">
+          <svg class="scene scene--nepal"><use href="#ridge-peaks"/></svg>
+          <span class="tcard__no">Инструкция №19</span>
+          <span class="tcard__instructor"><span class="tcard__avatar"><svg class="scene scene--nepal"><use href="#portrait"/></svg></span><span><b>Евгений «Анорак»</b><small>ведёт инструктор</small></span></span>
+        </span>
+        <span class="tcard__body">
+          <span class="tcard__kicker">Непал · Гималаи</span>
+          <span class="tcard__title">Аннапурна по шагам</span>
+          <span class="tcard__hook">Высота, которую набираешь не рывком, а ритуалом.</span>
+          <span class="tcard__route"><span class="dot"></span>Покхара<span class="seg"></span>Чомронг<span class="seg"></span><span class="dot"></span>База Аннапурны</span>
+          <span class="tcard__meta">
+            <span class="difficulty"><span class="difficulty__notches"><i class="difficulty__notch is-on"></i><i class="difficulty__notch is-on"></i><i class="difficulty__notch is-on"></i><i class="difficulty__notch is-on"></i><i class="difficulty__notch"></i></span><span class="difficulty__label">4/5</span></span>
+            <span class="tcard__kicker">14 дней · 110 км · ↑4130 м · от 18 лет</span>
+          </span>
+          <span class="tcard__foot">
+            <span class="tcard__price"><b>от 119 000 ₽</b><small>без перелёта · октябрь</small></span>
+            <span class="link-arrow">Открыть →</span>
+          </span>
+          <span class="tcard__discounts"><span class="badge-discount">−1000 предоплата</span><span class="badge-discount">цена «для своих»</span></span>
+        </span>
+      </a>
+
+      <!-- Дахаб -->
+      <a class="tcard reveal" href="instrukciya.html">
+        <span class="tcard__top">
+          <svg class="scene scene--dahab"><use href="#ridge-dunes"/></svg>
+          <span class="tcard__no">Инструкция №23</span>
+          <span class="tcard__badges"><span class="badge-novice">Читать новичкам</span><span class="stamp stamp--rotate" style="font-size:9px">Пилот · тимбилдинг</span></span>
+          <span class="tcard__instructor"><span class="tcard__avatar"><svg class="scene scene--dahab"><use href="#portrait"/></svg></span><span><b>Ольга «В мир»</b><small>ведёт инструктор</small></span></span>
+        </span>
+        <span class="tcard__body">
+          <span class="tcard__kicker">Египет · Синай · Дахаб</span>
+          <span class="tcard__title">Море, скалы и тишина пустыни</span>
+          <span class="tcard__hook">Снорклинг на рассвете и бедуинский чай под звёздами.</span>
+          <span class="tcard__route"><span class="dot"></span>Дахаб<span class="seg"></span>Голубая дыра<span class="seg"></span><span class="dot"></span>Цветной каньон</span>
+          <span class="tcard__meta">
+            <span class="difficulty"><span class="difficulty__notches"><i class="difficulty__notch is-on"></i><i class="difficulty__notch is-on"></i><i class="difficulty__notch"></i><i class="difficulty__notch"></i><i class="difficulty__notch"></i></span><span class="difficulty__label">2/5</span></span>
+            <span class="tcard__kicker">9 дней · радиалки · море · от 12 лет</span>
+          </span>
+          <span class="tcard__foot">
+            <span class="tcard__price"><b>от 74 000 ₽</b><small>без перелёта · окт–ноя</small></span>
+            <span class="link-arrow">Открыть →</span>
+          </span>
+          <span class="tcard__discounts"><span class="badge-discount">−1000 предоплата</span></span>
+        </span>
+      </a>
+
+      <!-- Ладога мамская -->
+      <a class="tcard reveal d1" href="instrukciya.html">
+        <span class="tcard__top">
+          <svg class="scene scene--ladoga"><use href="#ridge-hills"/></svg>
+          <span class="tcard__no">Инструкция №05</span>
+          <span class="tcard__badges"><span class="badge-novice">Читать новичкам</span></span>
+          <span class="tcard__instructor"><span class="tcard__avatar"><svg class="scene scene--ladoga"><use href="#portrait"/></svg></span><span><b>Дарья</b><small>ведёт инструктор</small></span></span>
+        </span>
+        <span class="tcard__body">
+          <span class="tcard__kicker">Россия · Карелия · Ладога</span>
+          <span class="tcard__title">Мамская Ладога</span>
+          <span class="tcard__hook">Шхеры, костёр и время выдохнуть — мамам можно в любое.</span>
+          <span class="tcard__route"><span class="dot"></span>Приозерск<span class="seg"></span>шхеры<span class="seg"></span><span class="dot"></span>о. Кильпола</span>
+          <span class="tcard__meta">
+            <span class="difficulty"><span class="difficulty__notches"><i class="difficulty__notch is-on"></i><i class="difficulty__notch"></i><i class="difficulty__notch"></i><i class="difficulty__notch"></i><i class="difficulty__notch"></i></span><span class="difficulty__label">1/5</span></span>
+            <span class="tcard__kicker">5 дней · базовый лагерь · радиалки · 0+</span>
+          </span>
+          <span class="tcard__foot">
+            <span class="tcard__price"><b>от 21 000 ₽</b><small>детский от 17 000 · июнь–авг</small></span>
+            <span class="link-arrow">Открыть →</span>
+          </span>
+          <span class="tcard__discounts"><span class="badge-discount">−500 своё снаряжение</span><span class="badge-discount">второй ребёнок −30%</span></span>
+        </span>
+      </a>
+
+      <!-- Алтай -->
+      <a class="tcard reveal d2" href="instrukciya.html">
+        <span class="tcard__top">
+          <svg class="scene scene--altai"><use href="#ridge-peaks"/></svg>
+          <span class="tcard__no">Инструкция №16</span>
+          <span class="tcard__instructor"><span class="tcard__avatar"><svg class="scene scene--altai"><use href="#portrait"/></svg></span><span><b>Евгений «Анорак»</b><small>ведёт инструктор</small></span></span>
+        </span>
+        <span class="tcard__body">
+          <span class="tcard__kicker">Россия · Горный Алтай</span>
+          <span class="tcard__title">Долины и перевалы Алтая</span>
+          <span class="tcard__hook">Бирюзовые реки, кедрачи и небо, которого в городе не бывает.</span>
+          <span class="tcard__route"><span class="dot"></span>Тюнгур<span class="seg"></span>Аккем<span class="seg"></span><span class="dot"></span>Белуха</span>
+          <span class="tcard__meta">
+            <span class="difficulty"><span class="difficulty__notches"><i class="difficulty__notch is-on"></i><i class="difficulty__notch is-on"></i><i class="difficulty__notch is-on"></i><i class="difficulty__notch"></i><i class="difficulty__notch"></i></span><span class="difficulty__label">3/5</span></span>
+            <span class="tcard__kicker">12 дней · 95 км · ↑2200 м · от 16 лет</span>
+          </span>
+          <span class="tcard__foot">
+            <span class="tcard__price"><b>от 58 000 ₽</b><small>июль–август</small></span>
+            <span class="link-arrow">Открыть →</span>
+          </span>
+          <span class="tcard__discounts"><span class="badge-discount">−500 своё снаряжение</span><span class="badge-discount">цена «для своих»</span></span>
+        </span>
+      </a>
+    </div>
+
+    <div class="center reveal" style="margin-top:42px">
+      <a class="btn btn--ghost btn--arrow" href="instrukcii.html">Весь каталог инструкций</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ ШКОЛА ТУРИЗМА -->
+<section class="section section--ink school" id="school">
+  <svg class="hero__contour" style="opacity:.06"><use href="#contour"/></svg>
+  <div class="wrap" style="position:relative;z-index:1">
+    <div class="sec-head reveal">
+      <div class="sec-head__text">
+        <span class="kicker">05 · Школа туризма</span>
+        <h2 class="h-2">От первого рюкзака до своего перевала</h2>
+        <p class="lede" style="margin-top:14px">Базовая инструкция — бесплатный ликбез: что положить в рюкзак и как не надорваться. Дальше — по узлам, и каждый уровень закрывается на маршруте, рядом с проводником. Система прощает: ритм путешествий сезонный, без ежедневного давления.</p>
+      </div>
+    </div>
+
+    <div class="skilltree">
+      <div class="snode snode--root reveal">
+        <span class="snode__lvl">Корень · бесплатно</span>
+        <h3 class="snode__title">Базовая инструкция</h3>
+        <p class="snode__desc">Что положить в рюкзак, как обуться, как не надорваться в первый день.</p>
+        <span class="snode__status open">● открыта для всех</span>
+        <span class="snode__connector"></span>
+      </div>
+      <div class="snode reveal d1">
+        <span class="snode__lvl">Уровень 1</span>
+        <h3 class="snode__title">Собрать рюкзак</h3>
+        <p class="snode__desc">Раскладка веса, слои одежды, КЛМН. Собрать улиточный домик и не надорваться.</p>
+        <span class="snode__status done">✓ пройдено</span>
+        <span class="snode__boss">Закрытие: первая ночёвка в базовом лагере.</span>
+        <span class="snode__connector"></span>
+      </div>
+      <div class="snode reveal d2">
+        <span class="snode__lvl">Уровень 2</span>
+        <h3 class="snode__title">Палатка в дождь</h3>
+        <p class="snode__desc">Поставить лагерь в ненастье и не промокнуть. Костёр под дождём.</p>
+        <span class="snode__status open">● открыт</span>
+        <span class="snode__boss">Закрытие: ночёвка под дождём с проводником.</span>
+        <span class="snode__connector"></span>
+      </div>
+      <div class="snode reveal d3">
+        <span class="snode__lvl">Уровень 3</span>
+        <h3 class="snode__title">Первый перевал</h3>
+        <p class="snode__desc">Навигация, темп, высота. Первая многодневка с набором.</p>
+        <span class="snode__status lock">▲ откроется после уровня 2</span>
+        <span class="snode__boss">Boss-fight: перевал 1А на реальном маршруте.</span>
+      </div>
+    </div>
+    <p class="school__bossnote reveal">Интенсивы и «экспресс-школа» — для тех, кто мечтает о походе уже завтра: экстренный ликбез + сразу практика на радиальном кемпинге.</p>
+    <div class="reveal" style="margin-top:28px"><a class="btn btn--primary" href="shkola.html">Открыть базовую инструкцию</a></div>
+  </div>
+</section>
+
+<!-- ============================================================ ФОРМАТЫ -->
+<section class="section" id="formats">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-head__text">
+        <span class="kicker">06 · Форматы под тебя</span>
+        <h2 class="h-2">У каждого формата — свой возрастной порог и честный паспорт доступности</h2>
+        <p class="lede" style="margin-top:14px">Мы пишем прямо, что будет легко, а что — трудно. Честность про сложность — это и есть забота.</p>
+      </div>
+    </div>
+    <div class="formats">
+      <div class="format is-warm reveal">
+        <span class="format__age">0+ · семейный</span>
+        <h3 class="format__title">Семейные и детские</h3>
+        <p class="format__desc">В том числе для особенных детей. Один инструктор на пятерых, темп — по самому медленному.</p>
+        <span class="format__tag">→ паспорт доступности у каждого маршрута</span>
+      </div>
+      <div class="format is-warm reveal d1">
+        <span class="format__age">18+ · мамы</span>
+        <h3 class="format__title">Мамский туризм</h3>
+        <p class="format__desc">Чиралы, Ладога. Самое комфортное проживание и купание — мамам можно в любое время.</p>
+        <span class="format__tag">→ Оля учит путешествовать примером</span>
+      </div>
+      <div class="format reveal d2">
+        <span class="format__age">корпоратив</span>
+        <h3 class="format__title">Команды и сообщества</h3>
+        <p class="format__desc">Беговые клубы, волейбол, творческие студии. Событие под ключ — и инструкция к применению.</p>
+        <span class="format__tag">→ собираем под запрос</span>
+      </div>
+      <div class="format reveal">
+        <span class="format__age">12+ · языковой</span>
+        <h3 class="format__title">English Camp</h3>
+        <p class="format__desc">Турция. Английский, который не учат, а проживают — потому что иначе не закажешь кофе.</p>
+        <span class="format__tag">→ ведёт Ольга «В мир»</span>
+      </div>
+      <div class="format reveal d1">
+        <span class="format__age">16+ · вода</span>
+        <h3 class="format__title">Яхтинг</h3>
+        <p class="format__desc">Горизонт, ветер и команда из шести человек. Капитан покажет, новичку — можно.</p>
+        <span class="format__tag">→ сезон открыт</span>
+      </div>
+      <div class="format reveal d2">
+        <span class="format__age">14+ · обучение</span>
+        <h3 class="format__title">Интенсивы и экспресс-школа</h3>
+        <p class="format__desc">Радиальный кемпинг с ежедневным обучением техникам — и тут же практика на тропе.</p>
+        <span class="format__tag">→ допом к альпсборам</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ ЖУРНАЛ + ПОДКАСТ -->
+<section class="section section--sand" id="journal">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-head__text">
+        <span class="kicker">07 · Медиа</span>
+        <h2 class="h-2">Журнал и подкаст путешественника</h2>
+        <p class="lede" style="margin-top:14px">Истории от первого лица: «как я первый раз пошёл на Хибины и всё сделал не так». Лонгриды, маршруты, разборы снаряжения — и подкаст, где проводники рассказывают свои тропы.</p>
+      </div>
+    </div>
+
+    <div class="journal-grid">
+      <div class="jcards">
+        <a class="jcard reveal" href="zhurnal.html">
+          <span class="jcard__img"><svg class="scene scene--hibiny"><use href="#ridge-peaks"/></svg></span>
+          <span class="jcard__body">
+            <span class="jcard__kicker">Хибины · Андрей · 12 мин</span>
+            <span class="jcard__title">Как я первый раз пошёл на Хибины и всё сделал не так</span>
+            <span class="jcard__author"><span class="av"><svg class="scene scene--hibiny"><use href="#portrait"/></svg></span><small>Андрей «Дед»</small></span>
+          </span>
+        </a>
+        <a class="jcard reveal d1" href="zhurnal.html">
+          <span class="jcard__img"><svg class="scene scene--nepal"><use href="#ridge-peaks"/></svg></span>
+          <span class="jcard__body">
+            <span class="jcard__kicker">Снаряжение · Евгений · 9 мин</span>
+            <span class="jcard__title">Рюкзак на 14 дней: что выбросить, чтобы дойти</span>
+            <span class="jcard__author"><span class="av"><svg class="scene scene--nepal"><use href="#portrait"/></svg></span><small>Евгений «Анорак»</small></span>
+          </span>
+        </a>
+        <a class="jcard reveal d2" href="zhurnal.html">
+          <span class="jcard__img"><svg class="scene scene--ladoga"><use href="#ridge-hills"/></svg></span>
+          <span class="jcard__body">
+            <span class="jcard__kicker">Дети · Дарья · 7 мин</span>
+            <span class="jcard__title">С ребёнком в поход: с какого возраста и как не сорваться</span>
+            <span class="jcard__author"><span class="av"><svg class="scene scene--ladoga"><use href="#portrait"/></svg></span><small>Дарья</small></span>
+          </span>
+        </a>
+        <a class="jcard reveal d3" href="zhurnal.html">
+          <span class="jcard__img"><svg class="scene scene--dahab"><use href="#ridge-dunes"/></svg></span>
+          <span class="jcard__body">
+            <span class="jcard__kicker">Дахаб · Ольга · 8 мин</span>
+            <span class="jcard__title">Дахаб межсезонья: море, тишина и английский между делом</span>
+            <span class="jcard__author"><span class="av"><svg class="scene scene--dahab"><use href="#portrait"/></svg></span><small>Ольга «В мир»</small></span>
+          </span>
+        </a>
+      </div>
+
+      <div class="podcast reveal d1">
+        <span class="podcast__kicker">◉ Подкаст путешественника · эпизод 04</span>
+        <h3 class="podcast__title">«Места силы и люди силы»</h3>
+        <p class="podcast__ep">Записан на двух петличках в палатке на Шумаке. О том, зачем люди едут за тысячи км к ста источникам — и что находят вместо.</p>
+        <div class="podcast__player">
+          <span class="podcast__play" id="podplay" aria-label="Слушать">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+          <span class="podcast__wave" id="podwave"></span>
+        </div>
+        <a class="link-arrow" style="color:var(--olive-light)" href="zhurnal.html">Все эпизоды →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ ПАСПОРТ / ЛЕГЕНДА -->
+<section class="section" id="passport">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-head__text">
+        <span class="kicker">08 · Легенда · паспорт · комьюнити</span>
+        <h2 class="h-2">Паспорт путешественника</h2>
+        <p class="lede" style="margin-top:14px">Каждая пройденная инструкция — разворот со штампом-визой: «Байкал · 2026», «Хибины · 2026». Штамп ставит инструктор своей рукой, на тропе — этого не подделать алгоритмом.</p>
+      </div>
+    </div>
+
+    <div class="passport-grid">
+      <div class="passport reveal">
+        <div class="passport__head">
+          <span class="mono">Паспорт · 3 из множества</span>
+          <span class="stamp">Подтверждено инструктором</span>
+        </div>
+        <div class="stamps">
+          <div class="visa"><span class="visa__region">Байкал</span><span class="visa__year">2026</span><span class="visa__by">штамп: А. «Дед»</span></div>
+          <div class="visa visa--olive"><span class="visa__region">Хибины</span><span class="visa__year">2026</span><span class="visa__by">штамп: А. «Дед»</span></div>
+          <div class="visa visa--olive"><span class="visa__region">Ладога</span><span class="visa__year">2026</span><span class="visa__by">штамп: Дарья</span></div>
+          <div class="visa visa--empty"><span class="visa__region">Непал</span><span class="visa__year">—</span><span class="visa__by">впереди</span></div>
+          <div class="visa visa--empty"><span class="visa__region">Дахаб</span><span class="visa__year">—</span><span class="visa__by">впереди</span></div>
+          <div class="visa visa--empty"><span class="visa__region">Алтай</span><span class="visa__year">—</span><span class="visa__by">впереди</span></div>
+        </div>
+        <p class="mono" style="font-size:12px;color:var(--stone-olive);margin-top:20px;letter-spacing:.03em">Титулы за верность, не за гонку:</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
+          <span class="stamp stamp--olive">Свой на Байкале</span>
+          <span class="stamp stamp--olive">Хранитель Ладоги</span>
+          <span class="stamp stamp--olive">Прошёл базовую инструкцию</span>
+        </div>
+      </div>
+
+      <div class="secret reveal d1">
+        <svg class="secret__contour"><use href="#contour"/></svg>
+        <div class="secret__inner">
+          <span class="secret__kicker">⌖ Зашифрованная инструкция</span>
+          <h3 class="secret__title">Сквозная легенда и клад</h3>
+          <p class="secret__text">Первая группа оставляет следующей послание и клад — секретную точку на нитке маршрута, видимую только тем, кто прошёл. Места силы. Люди силы. Серия туров связана одной нитью-сагой, и пасхалки не спойлерятся в публичной карточке.</p>
+          <div class="titles">
+            <span class="title-chip">⌖ послание группы №3</span>
+            <span class="title-chip">⌖ клад на перевале</span>
+            <span class="title-chip">⌖ видно только прошедшим</span>
+          </div>
+          <p class="secret__text" style="margin-top:18px;font-size:.88rem;opacity:.8">Членство клуба «для своих»: разовый символический взнос, пожизненная принадлежность и годовой дивиденд путешественника — накопленная скидка за пройденные маршруты.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CTA -->
+<section class="section section--sand snap-slide" style="text-align:center">
+  <div class="wrap reveal" style="max-width:720px">
+    <span class="kicker center">09 · Перед исполнением — прочесть</span>
+    <h2 class="h-display" style="margin-bottom:18px">Мечта — это маршрут,<br>который кто-то уже прошёл</h2>
+    <p class="lede center" style="margin-bottom:32px">Напиши нам, кем себя видишь на тропе — и мы соберём инструкцию под тебя. Или выбери проводника и просто скажи: пойдём со мной.</p>
+    <div class="center" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn--primary btn--arrow" href="#instructors">Выбрать проводника</a>
+      <a class="btn btn--ghost" href="instrukcii.html">Собрать мечту под себя</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ ФУТЕР -->
+<footer class="site-footer">
+  <svg class="site-footer__contour"><use href="#contour"/></svg>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="brandmark">
+          <span class="brandmark__mark" style="color:var(--terracotta-light)">
+            <svg viewBox="0 0 38 38" fill="none" aria-hidden="true">
+              <circle cx="19" cy="19" r="17.5" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M11 17 L19 9 L27 17" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/>
+              <path d="M5.5 22.5 C10 20.5, 14 23.5, 19 21 C24 18.5, 28 21.5, 32.5 19.5" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M6.5 27 C11 25, 15 28, 19 25.8 C24 23.2, 28 26, 31.5 24.2" stroke="currentColor" stroke-width="1.4" opacity=".55"/>
+            </svg>
+          </span>
+          <span class="brandmark__txt">
+            <span class="brandmark__name" style="color:var(--paper)">Инструкция к мечте</span>
+            <span class="brandmark__sub" style="color:var(--olive-light);opacity:.85">Dream Instruction</span>
+          </span>
+        </span>
+        <p class="footer-mission">Доступное приключение — через людей, а не через корпорации.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Маршрут по сайту</h4>
+        <a href="instruktory.html">Проводники</a>
+        <a href="instrukcii.html">Инструкции</a>
+        <a href="shkola.html">Школа туризма</a>
+        <a href="formaty.html">Форматы</a>
+        <a href="zhurnal.html">Журнал и подкаст</a>
+        <a href="pasport.html">Паспорт путешественника</a>
+      </div>
+      <div class="footer-col">
+        <h4>Связь</h4>
+        <a href="o-klube.html">Написать нам — соберём мечту под тебя</a>
+        <a href="o-klube.html">Telegram клуба</a>
+        <a href="instruktory.html">Стать инструктором клуба</a>
+        <a href="o-klube.html">Сотрудничество и коллаборации</a>
+        <a href="o-klube.html">О клубе и команде</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Инструкция к мечте · клуб путешествий</span>
+      <span>Перед исполнением — прочесть</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // --- SVG-сцены: атмосферная подложка (градиент + плёночное зерно + мягкие хребты + виньетка) ---
+  // Не клип-арт; цвета берёт из палитры сцены. Готово под замену реальным фото.
+  (function(){
+    var SHAPES = {
+      high:'<path fill="#L1#" fill-opacity="0.5" d="M0,470 C150,422 250,446 380,404 C520,360 650,432 800,396 C950,360 1080,428 1200,398 L1200,800 L0,800 Z"/><path fill="#L2#" fill-opacity="0.78" d="M0,560 C180,520 320,562 470,520 C640,474 800,550 960,516 C1080,492 1150,536 1200,520 L1200,800 L0,800 Z"/><path fill="#L3#" d="M0,652 C200,626 400,664 620,644 C820,628 1010,662 1200,642 L1200,800 L0,800 Z"/>',
+      low:'<path fill="#L1#" fill-opacity="0.5" d="M0,540 C220,500 420,542 640,512 C860,484 1040,538 1200,514 L1200,800 L0,800 Z"/><path fill="#L2#" fill-opacity="0.8" d="M0,628 C260,604 520,642 800,624 C1000,610 1110,638 1200,626 L1200,800 L0,800 Z"/><path fill="#L3#" d="M0,706 C300,694 600,718 900,704 C1050,698 1150,712 1200,704 L1200,800 L0,800 Z"/>'
+    };
+    var MAP = { 'ridge-peaks':{s:'high',sx:880}, 'ridge-hills':{s:'low',sx:330}, 'ridge-dunes':{s:'low',sx:760}, 'portrait':{s:'high',sx:430} };
+    function gv(cs,n,d){ var x=cs.getPropertyValue(n).trim(); return x||d; }
+    document.querySelectorAll('svg.scene').forEach(function(svg,i){
+      var u = svg.querySelector('use'); if(!u) return;
+      var ref = (u.getAttribute('href') || u.getAttributeNS('http://www.w3.org/1999/xlink','href') || '').replace('#','');
+      var m = MAP[ref]; if(!m) return;
+      var cs = getComputedStyle(svg);
+      var sky1=gv(cs,'--sky1','#33282a'), sky2=gv(cs,'--sky2','#a24e2a'), sun=gv(cs,'--sun','#f0d6ae'),
+          l2=gv(cs,'--l2','#5e5638'), l1=gv(cs,'--l1','#8a7e5a'), l3=gv(cs,'--l3','#2b2622');
+      var sh = SHAPES[m.s].replace(/#L1#/g,l1).replace(/#L2#/g,l2).replace(/#L3#/g,l3);
+      svg.setAttribute('viewBox','0 0 1200 800');
+      svg.setAttribute('preserveAspectRatio','xMidYMid slice');
+      svg.innerHTML =
+        '<defs>'+
+        '<linearGradient id="sk'+i+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+sky1+'"/><stop offset="0.52" stop-color="'+sky2+'"/><stop offset="1" stop-color="'+l2+'"/></linearGradient>'+
+        '<radialGradient id="vg'+i+'" cx="0.5" cy="0.4" r="0.85"><stop offset="0.5" stop-color="#15110e" stop-opacity="0"/><stop offset="1" stop-color="#15110e" stop-opacity="0.5"/></radialGradient>'+
+        '</defs>'+
+        '<rect width="1200" height="800" fill="url(#sk'+i+')"/>'+
+        '<circle cx="'+m.sx+'" cy="300" r="190" fill="'+sun+'" opacity="0.32" filter="url(#glow)"/>'+
+        sh+
+        '<rect width="1200" height="800" filter="url(#grain)" opacity="0.25" style="mix-blend-mode:overlay"/>'+
+        '<rect width="1200" height="800" fill="url(#vg'+i+')"/>';
+    });
+  })();
+
+  // хедер: прозрачный над hero → матовое стекло на скролле
+  var _hdr = document.querySelector('.site-header');
+  function _onScroll(){ if(_hdr) _hdr.classList.toggle('scrolled', window.scrollY > 40); }
+  window.addEventListener('scroll', _onScroll, { passive: true }); _onScroll();
+
+  // --- Скролл-контроллер слайдов: быстрый снап колесом + навигация стрелками ---
+  (function(){
+    return; // скролл-снап отключён по просьбе — продумаем эффект отдельно
+    if (!document.body.classList.contains('slides')) return;
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var seg = document.getElementById('segments');
+    var snapSlides = document.querySelectorAll('.snap-slide');
+    var ctaEl = snapSlides[snapSlides.length - 1];
+    var sections = [].slice.call(document.querySelectorAll('.slides > .hero, .slides > .section, .slides > .site-footer'));
+    var animating = false, lastSnap = 0, rafId = 0;
+    function deckActive(){ return window.innerWidth > 900 && window.innerHeight > 700; }
+    function top(el){ return Math.round(el.getBoundingClientRect().top + window.scrollY); }
+    function animateTo(y, dur){
+      y = Math.max(0, Math.min(y, document.documentElement.scrollHeight - window.innerHeight));
+      if (reduce){ window.scrollTo(0, y); return; }
+      cancelAnimationFrame(rafId);
+      var start = window.scrollY, dist = y - start, t0 = null;
+      if (Math.abs(dist) < 2){ animating = false; return; }
+      animating = true; dur = dur || 460;
+      function ease(p){ return 1 - Math.pow(1 - p, 3); }
+      function frame(ts){ if (t0 === null) t0 = ts; var p = Math.min(1, (ts - t0) / dur);
+        window.scrollTo(0, start + dist * ease(p));
+        if (p < 1) rafId = requestAnimationFrame(frame); else animating = false; }
+      rafId = requestAnimationFrame(frame);
+    }
+    function snap(t){ var now = Date.now(); if (now - lastSnap < 650) return false; lastSnap = now; animateTo(t, 470); return true; }
+    // навигация стрелками / PageUp-Down / Space / Home-End
+    function stops(){ return sections.map(top).sort(function(a,b){ return a - b; }); }
+    function nearest(arr){ var y = window.scrollY, b = 0, bd = Infinity; arr.forEach(function(v,i){ var d = Math.abs(v - y); if (d < bd){ bd = d; b = i; } }); return b; }
+    function stepTo(dir){ var st = stops(), i = nearest(st), ni = Math.max(0, Math.min(st.length - 1, i + dir)); if (ni !== i){ lastSnap = Date.now(); animateTo(st[ni], 520); } }
+    window.addEventListener('keydown', function(e){
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      var t = (e.target.tagName || '').toLowerCase();
+      if (t === 'input' || t === 'textarea' || t === 'select' || e.target.isContentEditable) return;
+      if (e.key === 'ArrowDown' || e.key === 'PageDown' || (e.key === ' ' && !e.shiftKey)){ e.preventDefault(); stepTo(1); }
+      else if (e.key === 'ArrowUp' || e.key === 'PageUp' || (e.key === ' ' && e.shiftKey)){ e.preventDefault(); stepTo(-1); }
+      else if (e.key === 'Home'){ e.preventDefault(); lastSnap = Date.now(); animateTo(0, 520); }
+      else if (e.key === 'End'){ e.preventDefault(); lastSnap = Date.now(); animateTo(document.documentElement.scrollHeight, 560); }
+    });
+    // колесо: быстрый снап верхней колоды (hero ↔ «Кому это») + магнит к финальному CTA
+    window.addEventListener('wheel', function(e){
+      if (!deckActive()) return;
+      if (animating){ e.preventDefault(); return; }
+      var dir = e.deltaY > 0 ? 1 : (e.deltaY < 0 ? -1 : 0); if (!dir) return;
+      var y = window.scrollY, vh = window.innerHeight, segY = top(seg), ctaY = ctaEl ? top(ctaEl) : Infinity;
+      if (dir > 0 && y < segY - 4){ if (snap(segY)) e.preventDefault(); return; }                     // hero → segments
+      if (dir < 0 && y > 4 && y <= segY + 4){ if (snap(0)) e.preventDefault(); return; }               // segments → hero
+      if (dir < 0 && y > segY + 4 && y < segY + vh * 0.9){ if (snap(segY)) e.preventDefault(); return; } // снизу магнитим к segments
+      if (dir > 0 && y < ctaY - 4 && y > ctaY - vh * 0.9){ if (snap(ctaY)) e.preventDefault(); return; } // магнит к CTA сверху
+      if (dir < 0 && y > ctaY + 4 && y < ctaY + vh * 0.55){ if (snap(ctaY)) e.preventDefault(); return; } // снизу к CTA
+    }, { passive: false });
+    // якоря — быстрая плавная прокрутка вместо мгновенного прыжка
+    document.addEventListener('click', function(e){
+      var a = e.target.closest && e.target.closest('a[href^="#"]'); if (!a) return;
+      var id = a.getAttribute('href').slice(1); if (!id) return;
+      var el = document.getElementById(id); if (!el) return;
+      e.preventDefault(); lastSnap = Date.now(); animateTo(top(el), 540);
+    });
+  })();
+
+  // staggered reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // podcast waveform (cosmetic)
+  const wave = document.getElementById('podwave');
+  if (wave) {
+    const heights = [9,16,24,14,28,12,20,30,16,24,10,22,26,14,18,28,12,20,16,24,9,18,26,14];
+    wave.innerHTML = heights.map(h => `<i style="height:${h}px"></i>`).join('');
+  }
+  const play = document.getElementById('podplay');
+  if (play) play.addEventListener('click', () => {
+    const playing = play.dataset.on === '1';
+    play.dataset.on = playing ? '0' : '1';
+    play.innerHTML = playing
+      ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'
+      : '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>';
+  });
+
+  // sort buttons (cosmetic toggle)
+  document.querySelectorAll('[data-sort]').forEach((b) => b.addEventListener('click', () => {
+    document.querySelectorAll('[data-sort]').forEach(x => x.classList.remove('is-active'));
+    b.classList.add('is-active');
+  }));
+
+  // mobile burger — reveal links inline
+  const burger = document.getElementById('burger');
+  const links = document.querySelector('.nav__links');
+  if (burger) burger.addEventListener('click', () => {
+    const open = links.style.display === 'flex';
+    links.style.cssText = open ? '' : 'display:flex;position:absolute;top:72px;left:0;right:0;background:var(--paper);flex-direction:column;padding:18px 24px;border-bottom:1px solid var(--sand-line);gap:14px;z-index:60';
+  });
+</script>
+</body>
+</html>

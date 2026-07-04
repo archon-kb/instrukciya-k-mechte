@@ -1,0 +1,16 @@
+{
+  "name": "camp-morning",
+  "mode": "image",
+  "model": "black-forest-labs/flux.2-flex",
+  "prompt": "A vivid, richly colored 2.5D layered illustration of a forest camp at golden morning: a few warm terracotta tents beside a clear turquoise reflective lake, lush deep-green pine forest framing the scene in layers, blue-green mountains in the distance, a glowing warm sky, saturated lifelike colors, painterly illustrated depth layers for parallax, alive and inviting, soft volumetric morning light, no text, no people",
+  "inputs": [],
+  "cost_rub": 14,
+  "source_urls": [
+    "https://s3.polza.ai/f/218047/2026/06/t_99b2ca39d23e38df.png"
+  ],
+  "files": [
+    "/Users/archon/Work/Инструкция-к-мечте/tools/../site-mockup/assets/generated/camp-morning.png"
+  ],
+  "generation_id": "gen_2183097010735943681",
+  "status": "completed"
+}

@@ -1,0 +1,4 @@
+# Зависимости CLI-генераторов tools/ (polza_media.py, polza_image.py, key_bg.py)
+# Установка: pip install -r tools/requirements.txt
+requests
+Pillow

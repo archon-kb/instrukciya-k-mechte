@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Язык живого стиля — обзор</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap&subset=cyrillic,cyrillic-ext,latin" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  body {
+    background:
+      radial-gradient(58% 38% at 88% 1%, rgba(239,196,135,.26), transparent 62%),
+      radial-gradient(52% 32% at 4% 99%, rgba(26,168,162,.13), transparent 62%),
+      linear-gradient(180deg, var(--atm-top) 0%, var(--atm-mid) 38%, var(--atm-mid) 60%, var(--atm-low) 100%);
+  }
+  /* демо живой базы */
+  .atm { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-card);
+    background:
+      radial-gradient(60% 50% at 92% 0%, rgba(239,196,135,.40), transparent 60%),
+      radial-gradient(55% 45% at 0% 100%, rgba(26,168,162,.22), transparent 60%),
+      linear-gradient(180deg, #F4EAD6 0%, #EDE6D8 50%, #E4E9E4 100%); }
+  .atm__band { padding: 26px 30px; }
+  .atm__band--sand { background: rgba(229,220,201,.62); }
+  .atm__tag { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--coffee); }
+  .atm__big { font-family: var(--font-display); font-size: 1.45rem; color: var(--charcoal); margin: 6px 0 0; }
+  .rv-wrap { max-width: 1120px; margin-inline: auto; padding: 48px var(--gutter) 90px; }
+  .rv-head { font-family: var(--font-mono); font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--stone-olive); }
+  .rv-h { font-family: var(--font-display); font-size: clamp(2rem,4.5vw,3rem); color: var(--charcoal); margin: 10px 0 6px; }
+  .rv-sub { color: var(--coffee); max-width: 60ch; margin-bottom: 40px; }
+  .rv-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--stone-olive); margin: 46px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--sand-line); }
+  /* свотчи */
+  .sw-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px,1fr)); gap: 14px; }
+  .sw { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-card); background: var(--paper); }
+  .sw__chip { height: 84px; }
+  .sw__meta { padding: 10px 12px 12px; }
+  .sw__name { font-family: var(--font-mono); font-size: 12px; color: var(--charcoal); letter-spacing: .02em; }
+  .sw__hex  { font-family: var(--font-mono); font-size: 11px; color: var(--stone-olive); margin-top: 2px; }
+  .sw__role { font-size: 12px; color: var(--coffee); margin-top: 6px; line-height: 1.35; }
+  /* демо-блоки */
+  .demo { background: var(--paper); border: 1px solid var(--sand-line); border-radius: var(--radius-lg); padding: 34px; box-shadow: var(--shadow-card); }
+  .demo-dark { background: var(--forest-deep); border-radius: var(--radius-lg); padding: 38px; position: relative; overflow: hidden; }
+  .demo-dark .lede { color: #CFE3DC; }
+  .aura { position: absolute; inset: 0; background: radial-gradient(120% 100% at 80% 0%, rgba(239,196,135,.20), transparent 60%); pointer-events: none; }
+  .row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-top: 22px; }
+  /* стеклянная панель над рассветом */
+  .glassdemo { position: relative; border-radius: var(--radius-lg); overflow: hidden; min-height: 230px; display: flex; align-items: center; padding: 34px; background: linear-gradient(120deg,#EFC487,#D98B5F 45%,#1AA8A2); }
+  .glasspanel { position: relative; max-width: 540px; background: var(--glass-dark); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); padding: 26px 30px; box-shadow: 0 20px 50px -24px rgba(20,30,28,.6); }
+  .glasspanel .k { font-family: var(--font-mono); font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color:#fff; display:inline-flex; align-items:center; gap:10px; }
+  .glasspanel .k::before { content:""; width:30px; height:1px; background: var(--terracotta-light); }
+  .glasspanel h4 { font-family: var(--font-display); color: #fff; font-size: 1.5rem; margin: 14px 0 8px; }
+  .glasspanel p { color: #F3EDE0; font-size: .98rem; }
+</style>
+</head>
+<body>
+<div class="rv-wrap">
+  <div class="rv-head">Инструкция к мечте · ревизия дизайна</div>
+  <h1 class="rv-h">Язык живого стиля</h1>
+  <p class="rv-sub">Старая палитра «полевого определителя» — выцветшие предки того, что в сцене героя живёт ярко. Каркас сохранён (шрифты, прямые углы, тонкие линии, мономаркеры) — вернулся цвет утра. Тёплое = действие и бренд, холодное (бирюза) = структура и система, лес = живая тёмная земля, рассвет = свет.</p>
+
+  <div class="rv-label">Палитра — извлечена из сцены героя</div>
+  <div class="sw-grid">
+    <div class="sw"><div class="sw__chip" style="background:#C85A33"></div><div class="sw__meta"><div class="sw__name">--ember</div><div class="sw__hex">#C85A33</div><div class="sw__role">Живой CTA (тенты). Мост к терракоте.</div></div></div>
+    <div class="sw"><div class="sw__chip" style="background:#B5562E"></div><div class="sw__meta"><div class="sw__name">--terracotta</div><div class="sw__hex">#B5562E</div><div class="sw__role">Бренд: штампы, активное (сохранён).</div></div></div>
+    <div class="sw"><div class="sw__chip" style="background:#1AA8A2"></div><div class="sw__meta"><div class="sw__name">--lake</div><div class="sw__hex">#1AA8A2</div><div class="sw__role">НОВОЕ. Структура и система.</div></div></div>
+    <div class="sw"><div class="sw__chip" style="background:#2FC6BE"></div><div class="sw__meta"><div class="sw__name">--lake-bright</div><div class="sw__hex">#2FC6BE</div><div class="sw__role">Акцент на тёмном, искры.</div></div></div>
+    <div class="sw"><div class="sw__chip" style="background:#137A77"></div><div class="sw__meta"><div class="sw__name">--lake-deep</div><div class="sw__hex">#137A77</div><div class="sw__role">Глубокая вода, hover.</div></div></div>
+    <div class="sw"><div class="sw__chip" style="background:#2E5248"></div><div class="sw__meta"><div class="sw__name">--forest</div><div class="sw__hex">#2E5248</div><div class="sw__role">Серьёзная структура.</div></div></div>
+    <div class="sw"><div class="sw__chip" style="background:#173029"></div><div class="sw__meta"><div class="sw__name">--forest-deep</div><div class="sw__hex">#173029</div><div class="sw__role">Фон тёмных секций, футер.</div></div></div>
+    <div class="sw"><div class="sw__chip" style="background:#EFC487"></div><div class="sw__meta"><div class="sw__name">--dawn</div><div class="sw__hex">#EFC487</div><div class="sw__role">Свечения, тёплые ауры.</div></div></div>
+    <div class="sw"><div class="sw__chip" style="background:#F6E3C2"></div><div class="sw__meta"><div class="sw__name">--dawn-soft</div><div class="sw__hex">#F6E3C2</div><div class="sw__role">Мягкие подложки.</div></div></div>
+    <div class="sw"><div class="sw__chip" style="background:#7E94A6"></div><div class="sw__meta"><div class="sw__name">--ridge</div><div class="sw__hex">#7E94A6</div><div class="sw__role">Холодная даль, баланс.</div></div></div>
+    <div class="sw"><div class="sw__chip" style="background:#EDE6D8"></div><div class="sw__meta"><div class="sw__name">--paper</div><div class="sw__hex">#EDE6D8</div><div class="sw__role">База — лист определителя (сохранён).</div></div></div>
+    <div class="sw"><div class="sw__chip" style="background:#6E7245"></div><div class="sw__meta"><div class="sw__name">--olive</div><div class="sw__hex">#6E7245</div><div class="sw__role">Понижен: тёплый травяной нюанс.</div></div></div>
+  </div>
+
+  <div class="rv-label">Живая база — атмосфера утра, не плоская бумага</div>
+  <div class="atm">
+    <div class="atm__band">
+      <div class="atm__tag">Плоская секция · прозрачная — атмосфера видна сама</div>
+      <p class="atm__big">Сайт остаётся внутри утреннего света сцены</p>
+    </div>
+    <div class="atm__band atm__band--sand">
+      <div class="atm__tag">Чередующаяся секция · sand-вуаль — атмосфера дышит сквозь</div>
+      <p class="atm__big">Рассвет сверху → бумага → озёрная дымка снизу</p>
+    </div>
+    <div class="atm__band">
+      <div class="atm__tag">Низ страницы · прохладная озёрная дымка</div>
+    </div>
+  </div>
+
+  <div class="rv-label">Светлая секция — кикер, заголовок, кнопки, штампы</div>
+  <div class="demo">
+    <p class="kicker">Как это работает</p>
+    <h2 class="h-2">Маршрут собирается в инструкцию</h2>
+    <p class="lede">Бирюзовый штрих структуры ведёт каждую секцию. Действие — тёплое: первичная кнопка стала живым ember, ghost остаётся спокойной.</p>
+    <div class="row">
+      <a class="btn btn--primary btn--arrow">Пойдём со мной</a>
+      <a class="btn btn--ghost">Выбрать инструкцию</a>
+      <span class="stamp">Дахаб · пилот</span>
+      <span class="stamp stamp--olive">Новичкам</span>
+    </div>
+    <div class="row">
+      <span class="difficulty"><span class="difficulty__notches"><i class="difficulty__notch is-on"></i><i class="difficulty__notch is-on"></i><i class="difficulty__notch is-on"></i><i class="difficulty__notch"></i><i class="difficulty__notch"></i></span><span class="difficulty__label">сложность 3 / 5</span></span>
+      <a class="link-arrow">читать инструкцию →</a>
+    </div>
+  </div>
+
+  <div class="rv-label">Тёмная «земля» — лес вместо плоского угля</div>
+  <div class="demo-dark">
+    <div class="aura"></div>
+    <p class="kicker" style="color:var(--lake-bright)"><span style="display:inline-block;width:26px;height:1px;background:var(--lake-bright);margin-right:10px;vertical-align:middle"></span>Школа туризма</p>
+    <h3 class="h-3" style="color:var(--paper);font-family:var(--font-display)">Сначала — навык. Потом — вершина.</h3>
+    <p class="lede">Тёмная секция дышит лесом-ночью, а не мёртвым серым. Бирюзовый кикер и рассветная аура держат её живой.</p>
+    <div class="row"><a class="btn btn--primary btn--arrow">Записаться в школу</a></div>
+  </div>
+
+  <div class="rv-label">Стекло над сценой — язык героя, переиспользуемый</div>
+  <div class="glassdemo">
+    <div class="glasspanel">
+      <span class="k">Клуб путешествий</span>
+      <h4>Рядом — свой человек</h4>
+      <p>Стеклянная панель с backdrop-blur лежит на сцене: рассвет → терракота → бирюза озера. Тот же приём, что в герое.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

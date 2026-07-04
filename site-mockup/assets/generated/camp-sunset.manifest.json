@@ -1,0 +1,16 @@
+{
+  "name": "camp-sunset",
+  "mode": "image",
+  "model": "black-forest-labs/flux.2-flex",
+  "prompt": "A vivid 2.5D layered illustration of a forest camp at warm sunset: cozy tents with a small glowing campfire beside a calm lake reflecting a richly saturated orange, pink and violet sky, deep green pine forest in layered depth, silhouetted blue mountains behind, lush saturated colors, painterly parallax depth, atmospheric warm and alive, no text, no people",
+  "inputs": [],
+  "cost_rub": 14,
+  "source_urls": [
+    "https://s3.polza.ai/f/218047/2026/06/t_054229235436fec2.png"
+  ],
+  "files": [
+    "/Users/archon/Work/Инструкция-к-мечте/tools/../site-mockup/assets/generated/camp-sunset.png"
+  ],
+  "generation_id": "gen_2183097083028967425",
+  "status": "completed"
+}
